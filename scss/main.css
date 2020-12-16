@@ -8,4 +8,69 @@
 body {
   background-color: #16161f;
 }
+
+header {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 20px;
+}
+
+header img {
+  width: 300px;
+}
+
+header form {
+  border: 1px solid green;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 20px;
+  border-radius: 20px;
+  background-color: #1a1b27;
+  -webkit-box-shadow: 0px 0px 5px #00d1ff;
+          box-shadow: 0px 0px 5px #00d1ff;
+}
+
+header form #city-input {
+  margin-right: 10px;
+  padding: 0px 10px;
+  border: none;
+  background: none;
+  color: #ccc;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+header form button {
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+header form button svg {
+  fill: white;
+  width: 20px;
+  height: 20px;
+}
+
+@media screen and (max-width: 679px) {
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 20vh;
+  }
+}
 /*# sourceMappingURL=main.css.map */
