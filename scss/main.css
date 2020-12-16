@@ -7,6 +7,7 @@
 
 body {
   background-color: #16161f;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 header {
@@ -47,6 +48,8 @@ header form #city-input {
   color: #ccc;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  font-family: "Noto Sans JP", sans-serif;
+  width: 150px;
 }
 
 header form button {
@@ -71,6 +74,141 @@ header form button svg {
         -ms-flex-align: center;
             align-items: center;
     height: 20vh;
+  }
+}
+
+#weather-stat-section {
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid red;
+}
+
+#weather-stat-section .loader-container {
+  text-align: center;
+}
+
+#weather-stat-section .loader-container .lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+#weather-stat-section .loader-container .lds-ripple div {
+  position: absolute;
+  border: 4px solid #00d1ff;
+  opacity: 1;
+  border-radius: 50%;
+  -webkit-animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+          animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+#weather-stat-section .loader-container .lds-ripple div:nth-child(2) {
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
+}
+
+#weather-stat-section .loader-container h3 {
+  margin-top: 20px;
+  color: white;
+  font-style: italic;
+  font-weight: 100;
+  font-size: 30px;
+}
+
+#weather-stat-section .loader-container h3 .one {
+  opacity: 0;
+  -webkit-animation: dot 1.3s infinite;
+  -webkit-animation-delay: 0s;
+  animation: dot 1.3s infinite;
+  animation-delay: 0s;
+}
+
+#weather-stat-section .loader-container h3 .two {
+  opacity: 0;
+  -webkit-animation: dot 1.3s infinite;
+  -webkit-animation-delay: 0.2s;
+  animation: dot 1.3s infinite;
+  animation-delay: 0.2s;
+}
+
+#weather-stat-section .loader-container h3 .three {
+  opacity: 0;
+  -webkit-animation: dot 1.3s infinite;
+  -webkit-animation-delay: 0.3s;
+  animation: dot 1.3s infinite;
+  animation-delay: 0.3s;
+}
+
+@-webkit-keyframes lds-ripple {
+  0% {
+    top: 50px;
+    left: 50px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
+
+@keyframes lds-ripple {
+  0% {
+    top: 50px;
+    left: 50px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes dot {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes dot {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 679px) {
+  #weather-stat-section {
+    height: 70vh;
   }
 }
 /*# sourceMappingURL=main.css.map */
