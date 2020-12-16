@@ -1,0 +1,13 @@
+$pageBackground: #16161f;
+$divsColor: #1a1b27;
+$boxShadow: #00d1ff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $pageBackground;
+}
