@@ -1,0 +1,23 @@
+{
+  "name": "TOP-Weather-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FraCav99/TOP-Weather-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FraCav99/TOP-Weather-app/issues"
+  },
+  "homepage": "https://github.com/FraCav99/TOP-Weather-app#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
