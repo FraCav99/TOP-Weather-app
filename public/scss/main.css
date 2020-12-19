@@ -40,7 +40,7 @@ header form {
           box-shadow: 0px 0px 5px #00d1ff;
 }
 
-header form #city-input {
+header form #cityInput {
   margin-right: 10px;
   padding: 0px 10px;
   border: none;

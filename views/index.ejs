@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App | The Odin Project </title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&family=Nunito:wght@900&display=swap" rel="stylesheet">
     <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="./scss/main.css">
+    <link rel="stylesheet" href="/scss/main.css">
 </head>
 <body>
     <header>
         <img src="./images/weather-logo.png" alt="weather-logo">
-        <form>
-            <input type="text" placeholder="Search for a city" id="city-input">
-            <button type="submit">
+        <form action="/" method="POST">
+            <input type="text" placeholder="Search for a city" name="cityInput" id="cityInput">
+            <button type="submit" id="submit">
                 <svg id="search-img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M23.111 20.058l-4.977-4.977c.965-1.52 1.523-3.322 1.523-5.251 0-5.42-4.409-9.83-9.829-9.83-5.42 0-9.828 4.41-9.828 9.83s4.408 9.83 9.829 9.83c1.834 0 3.552-.505 5.022-1.383l5.021 5.021c2.144 2.141 5.384-1.096 3.239-3.24zm-20.064-10.228c0-3.739 3.043-6.782 6.782-6.782s6.782 3.042 6.782 6.782-3.043 6.782-6.782 6.782-6.782-3.043-6.782-6.782zm2.01-1.764c1.984-4.599 8.664-4.066 9.922.749-2.534-2.974-6.993-3.294-9.922-.749z"/></svg>
             </button>
         </form>
@@ -29,6 +29,13 @@
             <div class="lds-ripple"><div></div><div></div></div>
             <h3>Getting information<span class="one">.</span><span class="two">.</span><span class="three">.</span></h3>
         </div>
+
+        <% if (typeof weatherData !== 'undefined') { %>
+            <p style="color: white"><%= weatherData.name %></p>
+        <% } else if (typeof error !== 'undefined') { %>
+            <p style="color: white"><%= error %></p>
+        <% } %>
+         
 
         <!-- <div class="city-stats-container">
 
