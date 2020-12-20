@@ -95,6 +95,27 @@ header form button svg {
           justify-content: center;
 }
 
+#weather-stat-section .error-div {
+  width: 60%;
+  height: 90%;
+  border-radius: 20px !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#weather-stat-section .error-div p {
+  font-family: "Nunito", sans-serif;
+  font-size: 40px;
+  color: white;
+}
+
 #weather-stat-section .loader-container {
   text-align: center;
 }
@@ -344,7 +365,8 @@ header form button svg {
 }
 
 @media screen and (max-width: 768px) {
-  #weather-stat-section .city-stats-container {
+  #weather-stat-section .city-stats-container,
+  #weather-stat-section .error-div {
     width: 70%;
   }
 }

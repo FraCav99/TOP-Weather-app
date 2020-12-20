@@ -4,6 +4,21 @@
   align-items: center;
   justify-content: center;
 
+  .error-div {
+    width: 60%;
+    height: 90%;
+    border-radius: 20px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-family: "Nunito", sans-serif;
+      font-size: 40px;
+      color: white;
+    }
+  }
+
   .loader-container {
     text-align: center;
     .lds-ripple {
@@ -194,7 +209,8 @@
 
 @media screen and (max-width: 768px) {
   #weather-stat-section {
-    .city-stats-container {
+    .city-stats-container,
+    .error-div {
       width: 70%;
     }
   }

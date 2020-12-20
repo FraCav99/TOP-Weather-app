@@ -95,7 +95,14 @@
                 const loaderContainer = document.querySelector('.loader-container');
                 loaderContainer.classList.toggle('visible');
             </script>
-            <p class="text-data" style="color: white"><%= error %></p>
+            <div class="error-div" style="
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%= errorImg %>');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            border-radius: 20px 20px 0px 0px;
+            ">
+              <p><%= error %></p>
+            </div>
         <% } %>
     </section>
 

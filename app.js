@@ -14,6 +14,9 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public/'));
 
 
+const openweathermapAPI_KEY = process.env.OPENWEATHER_API_KEY;
+const giphyAPI_KEY = process.env.GIPHY_API_KEY;
+
 app.route('/')
     .get((req, res) => res.render('index'))
     .post(async (req, res) => {
@@ -21,17 +24,14 @@ app.route('/')
             const city = req.body.cityInput;
             const cityName = city.charAt(0).toUpperCase() + city.slice(1);
             
-            const openweathermapAPI_KEY = process.env.OPENWEATHER_API_KEY;
-            const giphyAPI_KEY = process.env.GIPHY_API_KEY;
-            
             const weatherURL = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${openweathermapAPI_KEY}`;
-            
             const weatherResponse = await axios.get(weatherURL);
             const giphyResponse = await axios.get(`https://api.giphy.com/v1/gifs/translate?api_key=${giphyAPI_KEY}&s=${weatherResponse.data.weather[0].main}`);
 
             res.render('index', {weatherData: weatherResponse.data, giphyData: giphyResponse.data.data.images.original.url})
         } catch (error) {
-            res.render('index', {error: 'An error occurred!'});
+            const giphyResponse = await axios.get(`https://api.giphy.com/v1/gifs/translate?api_key=${giphyAPI_KEY}&s=error`);
+            res.render('index', {error: 'Ops! Try again!', errorImg: giphyResponse.data.data.images.original.url});
         }
     });
 
