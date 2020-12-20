@@ -31,29 +31,69 @@
       font-style: italic;
       font-weight: 100;
       font-size: 30px;
+    }
+  }
 
-      .one {
-        opacity: 0;
-        -webkit-animation: dot 1.3s infinite;
-        -webkit-animation-delay: 0s;
-        animation: dot 1.3s infinite;
-        animation-delay: 0s;
+  .city-stats-container {
+    width: 60%;
+    height: 100%;
+    box-shadow: 0px 0px 10px $boxShadow;
+    background-color: $divsColor;
+    border-radius: 20px;
+
+    .upper-card-part {
+      height: 70%;
+      .header-stats {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+
+        h3 {
+          color: white;
+        }
       }
 
-      .two {
-        opacity: 0;
-        -webkit-animation: dot 1.3s infinite;
-        -webkit-animation-delay: 0.2s;
-        animation: dot 1.3s infinite;
-        animation-delay: 0.2s;
+      .mid-stats {
+        position: relative;
+
+        margin-top: 60px;
+        h4 {
+          font-size: 100px;
+          color: white;
+          font-family: "Nunito", sans-serif;
+          text-align: center;
+        }
+
+        small {
+          font-size: 20px;
+          position: absolute;
+          top: 10px;
+        }
+      }
+    }
+
+    .bottom-card-part {
+      height: 30%;
+      border-radius: 0px 0px 20px 20px;
+      color: white;
+      padding: 10px 20px;
+
+      .first-stats,
+      .second-stats {
+        .stats-label {
+          display: flex;
+          justify-content: space-between;
+        }
+        .stats-value {
+          display: flex;
+          justify-content: space-between;
+        }
       }
 
-      .three {
-        opacity: 0;
-        -webkit-animation: dot 1.3s infinite;
-        -webkit-animation-delay: 0.3s;
-        animation: dot 1.3s infinite;
-        animation-delay: 0.3s;
+      .first-stats {
+        margin-bottom: 20px;
       }
     }
   }
@@ -91,5 +131,13 @@
 @media screen and (max-width: 679px) {
   #weather-stat-section {
     height: 70vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #weather-stat-section {
+    .city-stats-container {
+      width: 95%;
+    }
   }
 }

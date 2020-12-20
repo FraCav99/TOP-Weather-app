@@ -10,6 +10,10 @@ body {
   font-family: "Noto Sans JP", sans-serif;
 }
 
+.visible {
+  display: none;
+}
+
 header {
   height: 10vh;
   display: -webkit-box;
@@ -124,28 +128,84 @@ header form button svg {
   font-size: 30px;
 }
 
-#weather-stat-section .loader-container h3 .one {
-  opacity: 0;
-  -webkit-animation: dot 1.3s infinite;
-  -webkit-animation-delay: 0s;
-  animation: dot 1.3s infinite;
-  animation-delay: 0s;
+#weather-stat-section .city-stats-container {
+  width: 60%;
+  height: 100%;
+  -webkit-box-shadow: 0px 0px 10px #00d1ff;
+          box-shadow: 0px 0px 10px #00d1ff;
+  background-color: #1a1b27;
+  border-radius: 20px;
 }
 
-#weather-stat-section .loader-container h3 .two {
-  opacity: 0;
-  -webkit-animation: dot 1.3s infinite;
-  -webkit-animation-delay: 0.2s;
-  animation: dot 1.3s infinite;
-  animation-delay: 0.2s;
+#weather-stat-section .city-stats-container .upper-card-part {
+  height: 70%;
 }
 
-#weather-stat-section .loader-container h3 .three {
-  opacity: 0;
-  -webkit-animation: dot 1.3s infinite;
-  -webkit-animation-delay: 0.3s;
-  animation: dot 1.3s infinite;
-  animation-delay: 0.3s;
+#weather-stat-section .city-stats-container .upper-card-part .header-stats {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 20px;
+}
+
+#weather-stat-section .city-stats-container .upper-card-part .header-stats h3 {
+  color: white;
+}
+
+#weather-stat-section .city-stats-container .upper-card-part .mid-stats {
+  position: relative;
+  margin-top: 60px;
+}
+
+#weather-stat-section .city-stats-container .upper-card-part .mid-stats h4 {
+  font-size: 100px;
+  color: white;
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+}
+
+#weather-stat-section .city-stats-container .upper-card-part .mid-stats small {
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+}
+
+#weather-stat-section .city-stats-container .bottom-card-part {
+  height: 30%;
+  border-radius: 0px 0px 20px 20px;
+  color: white;
+  padding: 10px 20px;
+}
+
+#weather-stat-section .city-stats-container .bottom-card-part .first-stats .stats-label,
+#weather-stat-section .city-stats-container .bottom-card-part .second-stats .stats-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#weather-stat-section .city-stats-container .bottom-card-part .first-stats .stats-value,
+#weather-stat-section .city-stats-container .bottom-card-part .second-stats .stats-value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#weather-stat-section .city-stats-container .bottom-card-part .first-stats {
+  margin-bottom: 20px;
 }
 
 @-webkit-keyframes lds-ripple {
@@ -209,6 +269,12 @@ header form button svg {
 @media screen and (max-width: 679px) {
   #weather-stat-section {
     height: 70vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #weather-stat-section .city-stats-container {
+    width: 95%;
   }
 }
 /*# sourceMappingURL=main.css.map */

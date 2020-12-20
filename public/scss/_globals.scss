@@ -12,3 +12,8 @@ body {
   background-color: $pageBackground;
   font-family: "Noto Sans JP", sans-serif;
 }
+
+// Toggable class
+.visible {
+  display: none;
+}

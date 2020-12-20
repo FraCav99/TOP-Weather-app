@@ -10,13 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&family=Nunito:wght@900&display=swap" rel="stylesheet">
     <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="/scss/main.css">
+    <link rel="stylesheet" href="scss/main.css">
 </head>
 <body>
     <header>
         <img src="./images/weather-logo.png" alt="weather-logo">
         <form action="/" method="POST">
-            <input type="text" placeholder="Search for a city" name="cityInput" id="cityInput">
+            <input type="text" placeholder="Search for a city" name="cityInput" id="cityInput" required>
             <button type="submit" id="submit">
                 <svg id="search-img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M23.111 20.058l-4.977-4.977c.965-1.52 1.523-3.322 1.523-5.251 0-5.42-4.409-9.83-9.829-9.83-5.42 0-9.828 4.41-9.828 9.83s4.408 9.83 9.829 9.83c1.834 0 3.552-.505 5.022-1.383l5.021 5.021c2.144 2.141 5.384-1.096 3.239-3.24zm-20.064-10.228c0-3.739 3.043-6.782 6.782-6.782s6.782 3.042 6.782 6.782-3.043 6.782-6.782 6.782-6.782-3.043-6.782-6.782zm2.01-1.764c1.984-4.599 8.664-4.066 9.922.749-2.534-2.974-6.993-3.294-9.922-.749z"/></svg>
             </button>
@@ -27,19 +27,70 @@
         <!-- Loading info animation div -->
         <div class="loader-container">
             <div class="lds-ripple"><div></div><div></div></div>
-            <h3>Getting information<span class="one">.</span><span class="two">.</span><span class="three">.</span></h3>
+            <h3>Search for a location to check the weather</h3>
         </div>
 
         <% if (typeof weatherData !== 'undefined') { %>
-            <p style="color: white"><%= weatherData.name %></p>
+            <script>
+                const loaderContainer = document.querySelector('.loader-container');
+                loaderContainer.classList.add('visible');
+            </script>
+            <div class="city-stats-container">
+                <div 
+                    class="upper-card-part" 
+                    style="
+                        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%= giphyData %>');
+                        background-size: 100% 100%;
+                        background-repeat: no-repeat;
+                        border-radius: 20px 20px 0px 0px;
+                    "
+                >
+
+                    <div class="header-stats">
+                        <img src="https://www.countryflags.io/<%=weatherData.sys.country%>/flat/32.png" />
+                        <h3 class="text-data"><%= weatherData.name %></h3>
+                        <img src="http://openweathermap.org/img/w/<%= weatherData.weather[0].icon%>.png" />
+                    </div>
+    
+                    <div class="mid-stats">
+                        <h4><%= Number(weatherData.main.temp - 273.15).toFixed(2) %><small id="degrees">°C</small></h4>
+                    </div>
+                </div>
+
+                <div class="bottom-card-part">
+                    <div class="first-stats">
+                        <div class="stats-label">
+                            <span>Visibility</span>
+                            <span>Wind</span>
+                            <span>Feels like</span>
+                        </div>
+                        <div class="stats-value">
+                            <span><%= weatherData.visibility / 1000 %><small>km</small></span>
+                            <span><%= weatherData.wind.speed %><small>km/h</small></span>
+                            <span><%= Number(weatherData.main.feels_like - 273.15).toFixed(2) %><small>°C</small></span>
+                        </div>
+                    </div>
+                    <div class="second-stats">
+                        <div class="stats-label">
+                            <span>Humidity</span>
+                            <span>Cloudiness</span>
+                            <span>Pressure</span>
+                        </div>
+                        <div class="stats-value">
+                            <span><%= weatherData.main.humidity %><small>%</small></span>
+                            <span><%= weatherData.clouds.all %><small>%</small></span>
+                            <span><%= weatherData.main.pressure %><small>hPa</small></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <% } else if (typeof error !== 'undefined') { %>
-            <p style="color: white"><%= error %></p>
+            <script>
+                const loaderContainer = document.querySelector('.loader-container');
+                loaderContainer.classList.toggle('visible');
+            </script>
+            <p class="text-data" style="color: white"><%= error %></p>
         <% } %>
-         
-
-        <!-- <div class="city-stats-container">
-
-        </div> -->
     </section>
 </body>
 </html>
