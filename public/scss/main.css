@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -77,7 +78,7 @@ header form button svg {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    height: 20vh;
+    height: 17vh;
   }
 }
 
@@ -92,7 +93,6 @@ header form button svg {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 1px solid red;
 }
 
 #weather-stat-section .loader-container {
@@ -130,7 +130,7 @@ header form button svg {
 
 #weather-stat-section .city-stats-container {
   width: 60%;
-  height: 100%;
+  height: 90%;
   -webkit-box-shadow: 0px 0px 10px #00d1ff;
           box-shadow: 0px 0px 10px #00d1ff;
   background-color: #1a1b27;
@@ -161,7 +161,20 @@ header form button svg {
 
 #weather-stat-section .city-stats-container .upper-card-part .mid-stats {
   position: relative;
-  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 40px;
 }
 
 #weather-stat-section .city-stats-container .upper-card-part .mid-stats h4 {
@@ -175,6 +188,64 @@ header form button svg {
   font-size: 20px;
   position: absolute;
   top: 10px;
+}
+
+#weather-stat-section .city-stats-container .upper-card-part .mid-stats .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: auto;
+}
+
+#weather-stat-section .city-stats-container .upper-card-part .mid-stats .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#weather-stat-section .city-stats-container .upper-card-part .mid-stats .switch input:checked + .slider {
+  background-color: #00d1ff;
+}
+
+#weather-stat-section .city-stats-container .upper-card-part .mid-stats .switch input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  transform: translateX(26px);
+  content: "°F";
+  text-align: center;
+}
+
+#weather-stat-section .city-stats-container .upper-card-part .mid-stats .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1a1b27;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+#weather-stat-section .city-stats-container .upper-card-part .mid-stats .switch .slider:before {
+  position: absolute;
+  content: "°C";
+  text-align: center;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+#weather-stat-section .city-stats-container .upper-card-part .mid-stats .switch .slider.round {
+  border-radius: 34px;
+}
+
+#weather-stat-section .city-stats-container .upper-card-part .mid-stats .switch .slider.round:before {
+  border-radius: 50%;
 }
 
 #weather-stat-section .city-stats-container .bottom-card-part {
@@ -268,13 +339,68 @@ header form button svg {
 
 @media screen and (max-width: 679px) {
   #weather-stat-section {
-    height: 70vh;
+    height: 73vh;
   }
 }
 
 @media screen and (max-width: 768px) {
   #weather-stat-section .city-stats-container {
-    width: 95%;
+    width: 70%;
+  }
+}
+
+footer {
+  height: 10vh;
+  padding: 10px 20px 0px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .left {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .left span {
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+footer .left img {
+  width: 100px;
+}
+
+footer .right svg {
+  fill: white;
+  cursor: pointer;
+}
+
+footer .right svg:hover {
+  fill: #00d1ff;
+}
+
+@media screen and (max-width: 898px) {
+  footer .left {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 444px) {
+  footer .left img {
+    width: 50px;
   }
 }
 /*# sourceMappingURL=main.css.map */

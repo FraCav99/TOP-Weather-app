@@ -1,0 +1,51 @@
+footer {
+  height: 10vh;
+  padding: 10px 20px 0px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .left {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    span {
+      color: white;
+      font-size: 20px;
+      font-weight: 300;
+    }
+
+    img {
+      width: 100px;
+    }
+  }
+
+  .right {
+    svg {
+      fill: white;
+      cursor: pointer;
+      &:hover {
+        fill: $boxShadow;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 898px) {
+  footer {
+    .left {
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 444px) {
+  footer {
+    .left {
+      img {
+        width: 50px;
+      }
+    }
+  }
+}
