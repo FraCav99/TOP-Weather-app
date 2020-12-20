@@ -2,6 +2,8 @@ const switchTemp = document.getElementById('switchTemp');
 const gradeMeasure = document.getElementById('degrees');
 const temperature = document.getElementById('temperature');
 
+switchTemp.checked = false;
+
 const previousDegreeCelsius = temperature.textContent;
 const createDegressSymbol = (gradeStr) => {
     const gradeMeasure = document.createElement('small');
