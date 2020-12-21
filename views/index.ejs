@@ -73,7 +73,7 @@
                         <div class="stats-value">
                             <span><%= weatherData.visibility / 1000 %><small>km</small></span>
                             <span><%= weatherData.wind.speed %><small>km/h</small></span>
-                            <span><%= Number(weatherData.main.feels_like - 273.15).toFixed(2) %><small>°C</small></span>
+                            <span id="feels-like"><%= Number(weatherData.main.feels_like - 273.15).toFixed(2) %><small id="feels-like-degree">°C</small></span>
                         </div>
                     </div>
                     <div class="second-stats">
